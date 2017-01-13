@@ -1,23 +1,61 @@
-﻿using Newtonsoft.Json;
+﻿using System;
+using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace SharpThemes.Objects
 {
     class Theme 
     {
-        public readonly int ID;
-        public readonly string Name;
-        public readonly string Description;
-        public readonly string CreatedBy;
-        public readonly int Downloads;
-        public readonly bool IsNSFW;
-        public readonly bool IsApproved;
-        public readonly string BGM;
-        public readonly bool HasBGM;
-        public readonly int Type;
-        public readonly string Tags;
-        public readonly ThemeInfo Info;
-        public readonly bool FilesUpdated;
-        public readonly bool IsArchived;
-        public readonly string Notif;
+        [JsonProperty(PropertyName = "id")]
+        public uint ID { get; }
+
+        [JsonProperty(PropertyName = "name")]
+        public string Name { get; }
+
+        [JsonProperty(PropertyName = "desc")]
+        public string Description { get; }
+
+        [JsonProperty(PropertyName = "by")]
+        public string CreatedBy { get; }
+
+        [JsonProperty(PropertyName = "dl")]
+        public uint Downloads { get; }
+
+        [JsonProperty(PropertyName = "nsfw")]
+        public bool IsNSFW { get; }
+
+        [JsonProperty(PropertyName = "approved")]
+        public bool IsApproved { get; }
+
+        [JsonProperty(PropertyName = "bgm")]
+        public string BGM { get; }
+
+        [JsonProperty(PropertyName = "hasbgm")]
+        public bool HasBGM { get; }
+
+        [JsonProperty(PropertyName = "type")]
+        public uint Type { get; }
+
+        [JsonProperty(PropertyName = "tags")]
+        public string Tags { get; }
+
+        public List<string> TagList {
+            get {
+                return Tags.Split(new string[] { ", " }, StringSplitOptions.None).ToList();
+            }
+        }
+
+        [JsonProperty(PropertyName = "info")]
+        public ThemeInfo Info { get; }
+
+        [JsonProperty(PropertyName = "filesupdated")]
+        public bool FilesUpdated { get; }
+
+        [JsonProperty(PropertyName = "archived")]
+        public bool IsArchived { get; }
+
+        [JsonProperty(PropertyName = "notif")]
+        public string Notif { get; }
     }
 }
