@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace SharpThemes.Classes 
+namespace SharpThemes.Objects
 {
     class Theme 
     {
