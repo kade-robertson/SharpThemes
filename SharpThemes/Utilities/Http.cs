@@ -9,7 +9,11 @@ namespace SharpThemes.Utilities
 	{
 		public static async Task<string> DoGet(string url) {
 			using (var client = new HttpClient(new NativeMessageHandler())) {
-				return await client.GetStringAsync(url);	
+				try {
+					return await client.GetStringAsync(url);	
+				} catch (Exception ex) {
+					throw ex;
+				}
 			}
 		}
 	}
