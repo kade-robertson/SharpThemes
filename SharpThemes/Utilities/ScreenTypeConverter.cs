@@ -8,7 +8,7 @@ namespace SharpThemes.Utilities
     public class ScreenTypeConverter : JsonConverter 
     {
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer) {
-            writer.WriteValue((int)value);
+            writer.WriteValue((ScreenType)value);
         }
 
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer) {
@@ -20,7 +20,7 @@ namespace SharpThemes.Utilities
         }
 
         public override bool CanConvert(Type objectType) {
-            return objectType == typeof(int);
+            return true;
         }
     }
 }

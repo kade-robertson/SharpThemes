@@ -20,31 +20,31 @@ namespace SharpThemes.Objects
     public class ThemeInfo 
     {
         [JsonProperty(PropertyName = "top")]
-        //[JsonConverter(typeof(Utilities.ScreenTypeConverter))]
-        public uint TopScreenType { get; }
+        private uint m_TopScreenType;
+        public ScreenType TopScreenType { get { return (ScreenType)m_TopScreenType; } set { m_TopScreenType = (uint)value; } }
 
         [JsonProperty(PropertyName = "topf")]
-        //[JsonConverter(typeof(Utilities.ScrollTypeConverter))]
-        public uint TopScreenScrollType { get; }
+        private uint m_TopScreenScrollType;
+        public ScrollType TopScreenScrollType { get { return (ScrollType)m_TopScreenScrollType; } set { m_TopScreenScrollType = (uint)value; } }
 
         [JsonProperty(PropertyName = "bot")]
-        //[JsonConverter(typeof(Utilities.ScreenTypeConverter))]
-        public uint BottomScreenType { get; }
+        private uint m_BottomScreenType;
+        public ScreenType BottomScreenType { get { return (ScreenType)m_BottomScreenType; } set { m_BottomScreenType = (uint)value; } }
 
         [JsonProperty(PropertyName = "botf")]
-        //[JsonConverter(typeof(Utilities.ScrollTypeConverter))]
-        public uint BottomScreenScrollType { get; }
+        private uint m_BottomScreenScrollType;
+        public ScrollType BottomScreenScrollType { get { return (ScrollType)m_BottomScreenScrollType; } set { m_BottomScreenScrollType = (uint)value; } }
 
         [JsonProperty(PropertyName = "fol")]
         [JsonConverter(typeof(Utilities.BoolConverter))]
-        public bool HasCustomFolders { get; }
+        public bool HasCustomFolders { get; set; }
 
         [JsonProperty(PropertyName = "bor")]
         [JsonConverter(typeof(Utilities.BoolConverter))]
-        public bool HasCustomBorders { get; }
+        public bool HasCustomBorders { get; set; }
 
         [JsonProperty(PropertyName = "sfx")]
         [JsonConverter(typeof(Utilities.BoolConverter))]
-        public bool HasSFX { get; }
+        public bool HasSFX { get; set; }
     }
 }

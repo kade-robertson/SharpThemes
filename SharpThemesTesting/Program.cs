@@ -10,20 +10,13 @@ namespace SharpThemesTesting
 {
     class Program
     {
-        private static string m_baseurl = "https://3dsthem.es/getThemes.php?q=sort:dl";
-
-        public static ThemeGroup Search() {
-            var data = Task.Run(() => Http.DoGet(m_baseurl)).Result;
-            Console.WriteLine(data);
-            System.Diagnostics.Debug.WriteLine(data);
-            var ret = JsonConvert.DeserializeObject<ThemeGroup>(data);
-            Console.WriteLine(ret.ThemeCount);
-            return ret;
-        }
-
         static void Main(string[] args) {
-            var test = Search();
-            Console.WriteLine(WebUtility.HtmlDecode(test.Themes[0].InfoString));
+            var test = Task.Run(() => ThemeClient.Search()).Result;
+            Console.WriteLine("Most recent themes:");
+            foreach (Theme t in test.Themes)
+            {
+                Console.WriteLine($" - {t.Name} [Downloads: {t.Downloads}]");
+            }
             Console.Read();
         }
     }
