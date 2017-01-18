@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace SharpThemes.Objects
 {
-    class Theme 
+    public class Theme 
     {
         [JsonProperty(PropertyName = "id")]
         public uint ID { get; }

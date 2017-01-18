@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace SharpThemes.Objects
 {
-    class ThemeGroup 
+    public class ThemeGroup 
     {
         [JsonProperty(PropertyName = "count")]
         public int ThemeCount { get; }

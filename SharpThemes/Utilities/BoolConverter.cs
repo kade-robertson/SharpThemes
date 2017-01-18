@@ -3,7 +3,7 @@ using System;
 
 namespace SharpThemes.Utilities 
 {
-    class BoolConverter : JsonConverter
+    public class BoolConverter : JsonConverter
     {
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer) {
             writer.WriteValue(((bool)value) ? 1 : 0);

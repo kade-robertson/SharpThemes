@@ -2,25 +2,33 @@
 
 namespace SharpThemes.Objects 
 {
-    enum ThemeInfoType {
-        NormalScrollingScreen = 0,
-        NoScrollingScreen = 1,
-        FlipBookScreen = 2
+    public enum ScrollType {
+        NormalScrolling = 0,
+        NoScrolling = 1,
+        Flipbook = 2,
+        SlowScrolling = 3,
+        FlipbookLoop = 4
     }
 
-    class ThemeInfo 
+    public enum ScreenType {
+        Default = 0,
+        SolidColour = 1,
+        Custom = 3
+    }
+
+    public class ThemeInfo 
     {
-        [JsonProperty(PropertyName = "top")]
-        public int Top { get; }
+        [JsonProperty(PropertyName = "top", ItemConverterType = typeof(Utilities.ScreenTypeConverter))]
+        public ScreenType TopScreenType { get; }
 
-        [JsonProperty(PropertyName = "topf", ItemConverterType = typeof(Utilities.ThemeInfoConverter))]
-        public ThemeInfoType TopScreenType { get; }
+        [JsonProperty(PropertyName = "topf", ItemConverterType = typeof(Utilities.ScrollTypeConverter))]
+        public ScrollType TopScreenScrollType { get; }
 
-        [JsonProperty(PropertyName = "bot")]
-        public int Bot { get; }
+        [JsonProperty(PropertyName = "bot", ItemConverterType = typeof(Utilities.ScreenTypeConverter))]
+        public ScreenType BottomScreenType { get; }
 
-        [JsonProperty(PropertyName = "botf", ItemConverterType = typeof(Utilities.ThemeInfoConverter))]
-        public ThemeInfoType BottomScreenType { get; }
+        [JsonProperty(PropertyName = "botf", ItemConverterType = typeof(Utilities.ScrollTypeConverter))]
+        public ScrollType BottomScreenScrollType { get; }
 
         [JsonProperty(PropertyName = "fol", ItemConverterType = typeof(Utilities.BoolConverter))]
         public int HasCustomFolders { get; }
