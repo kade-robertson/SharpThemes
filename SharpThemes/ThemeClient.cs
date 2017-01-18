@@ -9,7 +9,7 @@ namespace SharpThemes
     {
         private static string m_baseurl = "https://3dsthem.es/getThemes.php";
 
-        public async static Task<ThemeGroup> SearchAsync() {
+        public async static Task<ThemeGroup> Search() {
             var data = await Http.DoGet(m_baseurl);
             return JsonConvert.DeserializeObject<ThemeGroup>(data);
         }

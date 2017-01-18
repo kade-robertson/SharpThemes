@@ -21,7 +21,7 @@ namespace SharpThemes.Utilities
         }
 
         public override bool CanConvert(Type objectType) {
-            return objectType == typeof(ScrollType);
+            return true;
         }
     }
 }

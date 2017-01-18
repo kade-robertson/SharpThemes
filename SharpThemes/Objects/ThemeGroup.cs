@@ -6,12 +6,12 @@ namespace SharpThemes.Objects
     public class ThemeGroup 
     {
         [JsonProperty(PropertyName = "count")]
-        public int ThemeCount { get; }
+        public uint ThemeCount { get; set; }
 
         [JsonProperty(PropertyName = "themes")]
-        public List<Theme> Themes { get; }
+        public List<Theme> Themes { get; set; }
 
         [JsonProperty(PropertyName = "userPrivelege")]
-        public string UserPriveledge { get; }
+        public string UserPriveledge { get; set; }
     }
 }

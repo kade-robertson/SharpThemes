@@ -1,6 +1,7 @@
 ﻿using System;
 using SharpThemes.Objects;
 using Newtonsoft.Json;
+using System.Diagnostics;
 
 namespace SharpThemes.Utilities
 {
@@ -12,14 +13,14 @@ namespace SharpThemes.Utilities
 
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer) {
             switch (int.Parse(reader.Value.ToString())) {
-                case 0: return ScreenType.Default;
+                case 3: return ScreenType.Custom;
                 case 1: return ScreenType.SolidColour;
             }
-            return ScreenType.Custom;
+            return ScreenType.Default;
         }
 
         public override bool CanConvert(Type objectType) {
-            return objectType == typeof(ScrollType);
+            return objectType == typeof(int);
         }
     }
 }

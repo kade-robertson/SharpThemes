@@ -2,6 +2,7 @@
 using System.Net.Http;
 using System.Threading.Tasks;
 using ModernHttpClient;
+using System.Net;
 
 namespace SharpThemes.Utilities
 {

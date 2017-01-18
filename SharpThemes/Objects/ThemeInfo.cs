@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 
 namespace SharpThemes.Objects 
 {
@@ -18,25 +19,32 @@ namespace SharpThemes.Objects
 
     public class ThemeInfo 
     {
-        [JsonProperty(PropertyName = "top", ItemConverterType = typeof(Utilities.ScreenTypeConverter))]
-        public ScreenType TopScreenType { get; }
+        [JsonProperty(PropertyName = "top")]
+        //[JsonConverter(typeof(Utilities.ScreenTypeConverter))]
+        public uint TopScreenType { get; }
 
-        [JsonProperty(PropertyName = "topf", ItemConverterType = typeof(Utilities.ScrollTypeConverter))]
-        public ScrollType TopScreenScrollType { get; }
+        [JsonProperty(PropertyName = "topf")]
+        //[JsonConverter(typeof(Utilities.ScrollTypeConverter))]
+        public uint TopScreenScrollType { get; }
 
-        [JsonProperty(PropertyName = "bot", ItemConverterType = typeof(Utilities.ScreenTypeConverter))]
-        public ScreenType BottomScreenType { get; }
+        [JsonProperty(PropertyName = "bot")]
+        //[JsonConverter(typeof(Utilities.ScreenTypeConverter))]
+        public uint BottomScreenType { get; }
 
-        [JsonProperty(PropertyName = "botf", ItemConverterType = typeof(Utilities.ScrollTypeConverter))]
-        public ScrollType BottomScreenScrollType { get; }
+        [JsonProperty(PropertyName = "botf")]
+        //[JsonConverter(typeof(Utilities.ScrollTypeConverter))]
+        public uint BottomScreenScrollType { get; }
 
-        [JsonProperty(PropertyName = "fol", ItemConverterType = typeof(Utilities.BoolConverter))]
-        public int HasCustomFolders { get; }
+        [JsonProperty(PropertyName = "fol")]
+        [JsonConverter(typeof(Utilities.BoolConverter))]
+        public bool HasCustomFolders { get; }
 
-        [JsonProperty(PropertyName = "bor", ItemConverterType = typeof(Utilities.BoolConverter))]
+        [JsonProperty(PropertyName = "bor")]
+        [JsonConverter(typeof(Utilities.BoolConverter))]
         public bool HasCustomBorders { get; }
 
-        [JsonProperty(PropertyName = "sfx", ItemConverterType = typeof(Utilities.BoolConverter))]
+        [JsonProperty(PropertyName = "sfx")]
+        [JsonConverter(typeof(Utilities.BoolConverter))]
         public bool HasSFX { get; }
     }
 }

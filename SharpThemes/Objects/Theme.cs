@@ -2,44 +2,54 @@
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 
 namespace SharpThemes.Objects
 {
     public class Theme 
     {
         [JsonProperty(PropertyName = "id")]
-        public uint ID { get; }
+        public uint ID { get; set; }
 
         [JsonProperty(PropertyName = "name")]
-        public string Name { get; }
+        private string m_Name;
+        public string Name { get { return WebUtility.HtmlDecode(m_Name); } set { m_Name = value; } }
 
         [JsonProperty(PropertyName = "desc")]
-        public string Description { get; }
+        private string m_Description;
+        public string Description { get { return WebUtility.HtmlDecode(m_Description); } set { m_Description = value; } }
 
         [JsonProperty(PropertyName = "by")]
-        public string CreatedBy { get; }
+        private string m_CreatedBy;
+        public string CreatedBy { get { return WebUtility.HtmlDecode(m_CreatedBy); } set { m_CreatedBy = value; } }
 
         [JsonProperty(PropertyName = "dl")]
-        public uint Downloads { get; }
+        public uint Downloads { get; set; }
 
         [JsonProperty(PropertyName = "nsfw")]
-        public bool IsNSFW { get; }
+        [JsonConverter(typeof(Utilities.BoolConverter))]
+        public bool IsNSFW { get; set; }
 
         [JsonProperty(PropertyName = "approved")]
-        public bool IsApproved { get; }
+        [JsonConverter(typeof(Utilities.BoolConverter))]
+        public bool IsApproved { get; set; }
 
         [JsonProperty(PropertyName = "bgm")]
-        public string BackgroundMusic { get; }
+        private string m_BackgroundMusic;
+        public string BackgroundMusic { get { return WebUtility.HtmlDecode(m_BackgroundMusic); } set { m_BackgroundMusic = value; } }
 
         [JsonProperty(PropertyName = "hasbgm")]
-        public bool HasBackgroundMusic { get; }
+        [JsonConverter(typeof(Utilities.BoolConverter))]
+        public bool HasBackgroundMusic { get; set; }
 
         [JsonProperty(PropertyName = "type")]
-        public uint Type { get; }
+        public uint Type { get; set; }
 
         [JsonProperty(PropertyName = "tags")]
-        public string Tags { get; }
+        private string m_Tags;
+        public string Tags { get { return WebUtility.HtmlDecode(m_Tags); } set { m_Tags = value; } }
 
+        [JsonIgnore]
         public List<string> TagList {
             get {
                 return Tags.Split(new string[] { ", " }, StringSplitOptions.None).ToList();
@@ -47,15 +57,15 @@ namespace SharpThemes.Objects
         }
 
         [JsonProperty(PropertyName = "info")]
-        public ThemeInfo Info { get; }
+        public string InfoString;
+        public ThemeInfo Info { get { return JsonConvert.DeserializeObject<ThemeInfo>(WebUtility.HtmlDecode(InfoString)); } }
 
         [JsonProperty(PropertyName = "filesupdated")]
-        public bool FilesUpdated { get; }
+        [JsonConverter(typeof(Utilities.BoolConverter))]
+        public bool FilesUpdated { get; set; }
 
         [JsonProperty(PropertyName = "archived")]
-        public bool IsArchived { get; }
-
-        [JsonProperty(PropertyName = "notif")]
-        public string Notif { get; }
+        [JsonConverter(typeof(Utilities.BoolConverter))]
+        public bool IsArchived { get; set; }
     }
 }
