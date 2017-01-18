@@ -12,16 +12,13 @@ namespace SharpThemes.Objects
         public uint ID { get; set; }
 
         [JsonProperty(PropertyName = "name")]
-        private string m_Name;
-        public string Name { get { return WebUtility.HtmlDecode(m_Name); } set { m_Name = value; } }
+        public string Name { get; set; }
 
         [JsonProperty(PropertyName = "desc")]
-        private string m_Description;
-        public string Description { get { return WebUtility.HtmlDecode(m_Description); } set { m_Description = value; } }
+        public string Description { get; set; }
 
         [JsonProperty(PropertyName = "by")]
-        private string m_CreatedBy;
-        public string CreatedBy { get { return WebUtility.HtmlDecode(m_CreatedBy); } set { m_CreatedBy = value; } }
+        public string CreatedBy { get; set; }
 
         [JsonProperty(PropertyName = "dl")]
         public uint Downloads { get; set; }
@@ -35,8 +32,7 @@ namespace SharpThemes.Objects
         public bool IsApproved { get; set; }
 
         [JsonProperty(PropertyName = "bgm")]
-        private string m_BackgroundMusic;
-        public string BackgroundMusic { get { return WebUtility.HtmlDecode(m_BackgroundMusic); } set { m_BackgroundMusic = value; } }
+        public string BackgroundMusic { get; set; }
 
         [JsonProperty(PropertyName = "hasbgm")]
         [JsonConverter(typeof(Utilities.BoolConverter))]
@@ -46,8 +42,7 @@ namespace SharpThemes.Objects
         public uint Type { get; set; }
 
         [JsonProperty(PropertyName = "tags")]
-        private string m_Tags;
-        public string Tags { get { return WebUtility.HtmlDecode(m_Tags); } set { m_Tags = value; } }
+        public string Tags { get; set; }
 
         [JsonIgnore]
         public List<string> TagList {
@@ -58,7 +53,9 @@ namespace SharpThemes.Objects
 
         [JsonProperty(PropertyName = "info")]
         public string InfoString;
-        public ThemeInfo Info { get { return JsonConvert.DeserializeObject<ThemeInfo>(WebUtility.HtmlDecode(InfoString)); } }
+
+        [JsonIgnore]
+        public ThemeInfo Info { get { return JsonConvert.DeserializeObject<ThemeInfo>(InfoString); } }
 
         [JsonProperty(PropertyName = "filesupdated")]
         [JsonConverter(typeof(Utilities.BoolConverter))]
@@ -67,5 +64,10 @@ namespace SharpThemes.Objects
         [JsonProperty(PropertyName = "archived")]
         [JsonConverter(typeof(Utilities.BoolConverter))]
         public bool IsArchived { get; set; }
+
+        public override string ToString()
+        {
+            return JsonConvert.SerializeObject(this, Formatting.Indented);
+        }
     }
 }

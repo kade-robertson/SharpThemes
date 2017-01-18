@@ -13,5 +13,10 @@ namespace SharpThemes.Objects
 
         [JsonProperty(PropertyName = "userPrivelege")]
         public string UserPriveledge { get; set; }
+
+        public override string ToString()
+        {
+            return JsonConvert.SerializeObject(this, Formatting.Indented);
+        }
     }
 }

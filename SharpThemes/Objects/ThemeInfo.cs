@@ -21,18 +21,26 @@ namespace SharpThemes.Objects
     {
         [JsonProperty(PropertyName = "top")]
         private uint m_TopScreenType;
+
+        [JsonIgnore]
         public ScreenType TopScreenType { get { return (ScreenType)m_TopScreenType; } set { m_TopScreenType = (uint)value; } }
 
         [JsonProperty(PropertyName = "topf")]
         private uint m_TopScreenScrollType;
+
+        [JsonIgnore]
         public ScrollType TopScreenScrollType { get { return (ScrollType)m_TopScreenScrollType; } set { m_TopScreenScrollType = (uint)value; } }
 
         [JsonProperty(PropertyName = "bot")]
         private uint m_BottomScreenType;
+
+        [JsonIgnore]
         public ScreenType BottomScreenType { get { return (ScreenType)m_BottomScreenType; } set { m_BottomScreenType = (uint)value; } }
 
         [JsonProperty(PropertyName = "botf")]
         private uint m_BottomScreenScrollType;
+
+        [JsonIgnore]
         public ScrollType BottomScreenScrollType { get { return (ScrollType)m_BottomScreenScrollType; } set { m_BottomScreenScrollType = (uint)value; } }
 
         [JsonProperty(PropertyName = "fol")]

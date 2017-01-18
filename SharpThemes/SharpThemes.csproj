@@ -41,8 +41,6 @@
     <Compile Include="ThemeClient.cs" />
     <Compile Include="Utilities\BoolConverter.cs" />
     <Compile Include="Utilities\Http.cs" />
-    <Compile Include="Utilities\ScreenTypeConverter.cs" />
-    <Compile Include="Utilities\ScrollTypeConverter.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed">
