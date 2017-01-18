@@ -29,10 +29,10 @@ namespace SharpThemes.Objects
         public bool IsApproved { get; }
 
         [JsonProperty(PropertyName = "bgm")]
-        public string BGM { get; }
+        public string BackgroundMusic { get; }
 
         [JsonProperty(PropertyName = "hasbgm")]
-        public bool HasBGM { get; }
+        public bool HasBackgroundMusic { get; }
 
         [JsonProperty(PropertyName = "type")]
         public uint Type { get; }

@@ -38,7 +38,9 @@
     <Compile Include="Objects\ThemeGroup.cs" />
     <Compile Include="Objects\ThemeInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\BoolConverter.cs" />
     <Compile Include="Utilities\Http.cs" />
+    <Compile Include="Utilities\ThemeInfoConverter.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed">
@@ -59,9 +61,7 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-  <ItemGroup>
-    <Folder Include="Utilities\" />
-  </ItemGroup>
+  <ItemGroup />
   <ProjectExtensions>
     <MonoDevelop>
       <Properties>

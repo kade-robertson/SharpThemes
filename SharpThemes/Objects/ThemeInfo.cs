@@ -2,27 +2,33 @@
 
 namespace SharpThemes.Objects 
 {
+    enum ThemeInfoType {
+        NormalScrollingScreen = 0,
+        NoScrollingScreen = 1,
+        FlipBookScreen = 2
+    }
+
     class ThemeInfo 
     {
         [JsonProperty(PropertyName = "top")]
         public int Top { get; }
 
-        [JsonProperty(PropertyName = "topf")]
-        public int TopF { get; }
+        [JsonProperty(PropertyName = "topf", ItemConverterType = typeof(Utilities.ThemeInfoConverter))]
+        public ThemeInfoType TopScreenType { get; }
 
         [JsonProperty(PropertyName = "bot")]
         public int Bot { get; }
 
-        [JsonProperty(PropertyName = "botf")]
-        public int BotF { get; }
+        [JsonProperty(PropertyName = "botf", ItemConverterType = typeof(Utilities.ThemeInfoConverter))]
+        public ThemeInfoType BottomScreenType { get; }
 
-        [JsonProperty(PropertyName = "fol")]
-        public int Fol { get; }
+        [JsonProperty(PropertyName = "fol", ItemConverterType = typeof(Utilities.BoolConverter))]
+        public int HasCustomFolders { get; }
 
-        [JsonProperty(PropertyName = "bor")]
-        public int Bor { get; }
+        [JsonProperty(PropertyName = "bor", ItemConverterType = typeof(Utilities.BoolConverter))]
+        public bool HasCustomBorders { get; }
 
-        [JsonProperty(PropertyName = "sfx")]
-        public int SFX { get; }
+        [JsonProperty(PropertyName = "sfx", ItemConverterType = typeof(Utilities.BoolConverter))]
+        public bool HasSFX { get; }
     }
 }
