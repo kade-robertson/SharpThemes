@@ -38,9 +38,6 @@ namespace SharpThemes.Objects
         [JsonConverter(typeof(Utilities.BoolConverter))]
         public bool HasBackgroundMusic { get; set; }
 
-        [JsonProperty(PropertyName = "type")]
-        public uint Type { get; set; }
-
         [JsonProperty(PropertyName = "tags")]
         public string Tags { get; set; }
 
