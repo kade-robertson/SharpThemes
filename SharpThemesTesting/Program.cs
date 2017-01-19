@@ -16,6 +16,9 @@ namespace SharpThemesTesting
             foreach (Theme t in test.Themes)
             {
                 Console.WriteLine($" - {t.Name} [Downloads: {t.Downloads}]");
+                Console.WriteLine($"    - Download: {t.DownloadURL}");
+                Console.WriteLine($"    - Preview: {t.PreviewImageURL}");
+                Console.WriteLine($"    - Background Music: {t.BackgroundMusicURL}");
             }
             Console.Read();
         }

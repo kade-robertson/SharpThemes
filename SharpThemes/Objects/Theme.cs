@@ -69,5 +69,26 @@ namespace SharpThemes.Objects
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }
+
+        [JsonIgnore]
+        public string DownloadURL {
+            get {
+                return $"https://3dsthem.es/downloadTheme.php?i={ID}&v=0";
+            }
+        }
+
+        [JsonIgnore]
+        public string PreviewImageURL {
+            get {
+                return $"https://3dsthem.es/_/themes/{ID}/Preview.png";
+            }
+        }
+
+        [JsonIgnore]
+        public string BackgroundMusicURL{
+            get {
+                return $"https://3dsthem.es/_/themes/{ID}/bgm.ogg";
+            }
+        }
     }
 }
