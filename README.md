@@ -50,6 +50,6 @@ and `Fody`, however these packages can be removed and it will build as usual.
 
 ## Example
 
-Here is a quick demonstration, you can find this project in the `SharpThemesTest` folder.
+Here is a quick demonstration, you can find this project in the `SharpThemesTesting` folder.
 
 ![Demo picture](http://sharpthemes.pw/demo.png)
