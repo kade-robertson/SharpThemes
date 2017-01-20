@@ -47,3 +47,9 @@ You can also make feature requests through the issue tracker, I will label every
 
 This library is dependant on `ModernHttpClient` and `Newtonsoft.Json`. The testing application is also dependant on `Costura.Fody` 
 and `Fody`, however these packages can be removed and it will build as usual.
+
+## Example
+
+Here is a quick demonstration, you can find this project in the `SharpThemesTest` folder.
+
+![Demo picture](http://krobertson.pw/demo.png)
