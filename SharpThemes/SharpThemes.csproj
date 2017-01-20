@@ -74,6 +74,8 @@
   <ItemGroup>
     <Compile Include="Objects\Badge.cs" />
     <Compile Include="Objects\BadgeGroup.cs" />
+    <Compile Include="Objects\SplashGroup.cs" />
+    <Compile Include="Objects\Splash.cs" />
     <Compile Include="SortBy.cs" />
     <Compile Include="Objects\Theme.cs" />
     <Compile Include="Objects\ThemeGroup.cs" />

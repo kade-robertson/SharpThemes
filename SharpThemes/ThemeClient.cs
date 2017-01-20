@@ -17,6 +17,8 @@ namespace SharpThemes
                 return m_themebaseurl;
             } else if (typeof(T) == typeof(Badge)) {
                 return m_badgebaseurl;
+            } else if (typeof(T) == typeof(Splash)) {
+                return m_splashbaseurl;
             }
             return m_themebaseurl;
         }
@@ -59,6 +61,10 @@ namespace SharpThemes
             return await GenericSearch<Badge, BadgeGroup>(text, sorting, username);
         }
 
+        public async static Task<SplashGroup> SearchSplashes(string text = "", SortBy sorting = default(SortBy), string username = "") {
+            return await GenericSearch<Splash, SplashGroup>(text, sorting, username);
+        }
+
         public async static Task<ThemeGroup> GetMostRecentThemes() {
             return await GenericTopList<Theme, ThemeGroup>(TopList.MostRecent);
         }
@@ -67,12 +73,20 @@ namespace SharpThemes
             return await GenericTopList<Badge, BadgeGroup>(TopList.MostRecent);
         }
 
+        public async static Task<SplashGroup> GetMostRecentSplashes() {
+            return await GenericTopList<Splash, SplashGroup>(TopList.MostRecent);
+        }
+
         public async static Task<ThemeGroup> GetMostPopularThemes() {
             return await GenericTopList<Theme, ThemeGroup>(TopList.MostPopular);
         }
 
         public async static Task<BadgeGroup> GetMostPopularBadges() {
             return await GenericTopList<Badge, BadgeGroup>(TopList.MostPopular);
+        }
+
+        public async static Task<SplashGroup> GetMostPopularSplashes() {
+            return await GenericTopList<Splash, SplashGroup>(TopList.MostPopular);
         }
     }
 }
