@@ -11,7 +11,7 @@ namespace SharpThemesTesting
     class Program
     {
         static void Main(string[] args) {
-            var test = Task.Run(() => ThemeClient.GetMostRecent()).Result;
+            var test = Task.Run(() => ThemeClient.SearchThemes(username: "Rocket_Grunt")).Result;
             Console.WriteLine("Most recent themes:");
             foreach (Theme t in test.Themes)
             {
