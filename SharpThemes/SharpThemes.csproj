@@ -74,12 +74,13 @@
   <ItemGroup>
     <Compile Include="Objects\Badge.cs" />
     <Compile Include="Objects\BadgeGroup.cs" />
-    <Compile Include="Objects\SortBy.cs" />
+    <Compile Include="SortBy.cs" />
     <Compile Include="Objects\Theme.cs" />
     <Compile Include="Objects\ThemeGroup.cs" />
     <Compile Include="Objects\ThemeInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ThemeClient.cs" />
+    <Compile Include="TopList.cs" />
     <Compile Include="Utilities\BoolConverter.cs" />
     <Compile Include="Utilities\Http.cs" />
   </ItemGroup>
