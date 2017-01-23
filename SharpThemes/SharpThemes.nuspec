@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>SharpThemes</id>
+    <version>0.1.0-beta</version>
+    <title>SharpThemes</title>
+    <authors>Kade Robertson</authors>
+    <owners>Kade Robertson</owners>
+    <licenseUrl>https://raw.githubusercontent.com/kade-robertson/SharpThemes/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/kade-robertson/SharpThemes</projectUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>A wrapper for 3DSThem.es to obtain and search for themes, badges and splash screens for the Nintendo 3DS.</description>
+    <releaseNotes>initial pre-release</releaseNotes>
+    <copyright>Copyright 2017</copyright>
+    <tags>sharpthemes 3dsthemes 3ds console</tags>
+  </metadata>
+</package>
