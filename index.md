@@ -27,7 +27,7 @@ only guaranteed to be accurate as of the latest official release.
 To include this library in your project, there are two super simple ways of doing it:
 
  - Download the [latest release package](https://github.com/kade-robertson/SharpThemes/releases/latest) straight from GitHub
- - Install via a NuGet package, either through the development environment of your choice or by manually obtaining the `.nupkg`
+ - Install via a [NuGet package](https://www.nuget.org/packages/SharpThemes/), either through the development environment of your choice or by manually obtaining the `.nupkg`
    file from [here](https://github.com/kade-robertson/SharpThemes/releases).
    
 ## Contributing
