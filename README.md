@@ -14,7 +14,7 @@ in the following environments:
  - iOS (via Xamarin)
  - Web (ASP.NET and Silverlight apps)
  
-SharpThemes follows the versioning rules laid out by [Semantic Versioning 2.0.0](https://semver.org/).
+SharpThemes follows the versioning rules laid out by [Semantic Versioning 2.0.0](http://semver.org/).
  
 ## Documentation
 
